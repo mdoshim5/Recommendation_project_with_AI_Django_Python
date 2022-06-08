@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+    About the Devs
+{% endblock %}
+
+{% block other_css_link %}
+    <link rel="stylesheet" type="text/css" href="{% static "recommendationapp/aboutus3.css" %}?{% now "U" %}">
+{%endblock%}
+
+{% block nav_section %}
+    {% include "nav.html"%}
+{% endblock %}
+
+
+{% block page_content %}
+    <div class="company-details">
+        <h2>Developer details</h2>
+        <p>Name : Md Oshim</p>
+        <p>Email : mdoshim5@gmail.com</p>
+        <p>Phone : 015133846</p>
+    </div>
+{% endblock %}

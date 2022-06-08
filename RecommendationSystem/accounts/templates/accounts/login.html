@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+    Login
+{% endblock %}
+
+{% block other_css_link %}
+    <link rel="stylesheet" href="{% static "accounts/login.css" %}?{% now "U" %}">
+{% endblock %}
+
+{% block page_content %}
+    <div class="container">
+        <h3>Login</h3>
+        <form action="/accounts/login/" class="form" method="post">
+            {% csrf_token %}
+            <label for="id_username" class="username">Username</label>
+            <input required id="id_username" name="username" type="text" value={{username}} > <br>
+            {% if error %}
+                <h4 class='cred'> Credentials didn't matched ! </h4>
+            {% endif %}
+            <label for="id_password" class="password" >Password </label>
+            <input required id="id_password" name="password" type="password" value={{password}} > <br>
+            <button type="submit">Submit</button>
+            <span>Haven't created one? <a href="/accounts/signup">Create One</a> </span>
+        </form>
+    </div>
+
+{% endblock %}

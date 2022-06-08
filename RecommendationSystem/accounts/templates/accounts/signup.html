@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+    Create an account
+{% endblock %}
+
+{% block other_css_link %}
+    <link rel="stylesheet" href="{% static "accounts/signup.css" %}?{% now "U" %}">
+{%endblock%}
+
+{% block page_content %}
+<div class="container">
+    <h3>Create Account</h3>
+    <form action="" class="form" method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" value={{username}}> <br>
+        {% if error1 %}
+            <h4 class='cred'> {{ error1 }} !</h4>  
+        {% endif %}
+        <input  type="password" name="password1" placeholder="Password" value={{password}}> <br>
+        {% if error2 %}
+            <h4 class='cred'> {{ error2 }} !</h4>  
+        {% endif %}
+        <input  type="password" name="password2" placeholder="Confirm Password" value={{password}}>
+        <button type="submit">Submit</button>
+        <span>Have one? <a href="{% url 'login' %}">Login</a> </span>
+    </form>
+    
+</div>
+{% endblock %}

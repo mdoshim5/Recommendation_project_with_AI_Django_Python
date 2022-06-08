@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+    Fill up the form to get recommendation
+{% endblock %}
+
+{% block other_css_link %}
+    <link rel="stylesheet" href="{% static "recommendationapp/dontknowmyrequirements3.css" %}?{% now "U" %}">
+{%endblock%}
+
+{% block nav_section %}
+    {% include "nav.html"%}
+{% endblock %}
+
+
+{% block page_content %}
+    <div class="container">
+        <form class="form" action = "" method="post">
+            {% csrf_token %}
+            <label for="company_size">How big is your company:</label>
+            <select name="company_size" id="company_size">
+                <option value="2">Small</option>
+                <option value="5">Medium</option>
+                <option value="10">Large</option>
+                <option value="20">Extra-large</option>
+            </select><br>
+            <label for="expected_hits">Expected hits to System:</label>
+            <select name="hits" id="hits">
+                <option value="2">2 M</option>
+                <option value="4">4 M</option>
+                <option value="10">10 M</option>
+                <option value="30">30 M</option>
+            </select>
+            <button class="btn" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

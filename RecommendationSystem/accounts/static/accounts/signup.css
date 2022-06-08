@@ -1,0 +1,61 @@
+.container{
+    width: 50%;
+    margin: 0 auto;
+}
+.container h3{
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+}
+.content{
+    min-height: 450px;
+}
+.form{
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    box-shadow: 5px 10px 10px grey;
+    border-radius: 10px;
+}
+input{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 95%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    
+}
+button{
+    display: block;
+    width: 30%;
+    text-align: center;
+    padding: 5px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0 auto;
+    
+}
+.password{
+    padding: 5px;
+    margin-right: 12px
+}
+span{
+    display: inline-block;
+    margin: 10px 0px 10px 40%;
+
+}
+span a{
+    text-decoration: none;
+}
+.cred{
+    color: red;
+    margin-left: 5%;
+}

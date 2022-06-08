@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %}Profile{% endblock  %}
+
+{% block other_css_link %}
+    <link rel="stylesheet" href="{% static "profileapp/edit_profile.css" %}?{% now "U" %}">
+{% endblock %}
+
+{% block page_content %}
+
+    <div class="container">
+        <form action="/profile/edit" class="form" method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <h2>User Name: {{user.username}}</h2>
+            <label for="id_first_name" class="first_name">First Name: </label>
+            <input required id="id_first_name" name="first_name" type="text" value={{profile.first_name}} > <br>
+           
+            <label for="id_last_name" class="last_name">Last Name: </label>
+            <input required id="id_last_name" name="last_name" type="text" value={{profile.last_name}} > <br>
+            <label for="id_gender" class="gender">Gender: </label>
+            <select class"gender" required id="id_gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select> <br>
+            <label for="id_age" class="age">Age: </label>
+            <input required id="id_age" name="age" type="number" value={{profile.age}} > <br>
+            <label for="image" class="image">Image: </label>
+            <input type="file" id="image" name="image"> <br>
+            
+            <button type="submit">Submit</button>
+            
+        </form>
+    </div>
+
+{% endblock  %}
+

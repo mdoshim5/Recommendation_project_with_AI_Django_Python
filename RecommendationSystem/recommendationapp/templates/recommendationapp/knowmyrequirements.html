@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+    Fill up the form to get recommendation
+{% endblock %}
+
+{% block other_css_link %}
+    <link rel="stylesheet" href="{% static "recommendationapp/kmr2.css" %}?{% now "U" %}">
+{%endblock%}
+
+{% block nav_section %}
+    {% include "nav.html"%}
+{% endblock %}
+
+
+{% block page_content %}
+    <div class="know-container">
+        <h2>Choose Your Requirements</h2>
+        <hr>
+        <form class="form" action = "" method="post">
+            {% csrf_token %}
+            <label for="vcpu">Virtual-CPU: </label>
+            <input required type="number" name="vcpu" id="vcpu" placeholder="How many V-CPU you want" min="2" max="128" title="min=2, max=128"><br>
+            <label for="ram">RAM: </label>
+            <input required type="number" name="ram" id="ram" placeholder="How much RAM you want" min="1" max="1024" title="min=1, max=1024">GB<br>
+            <label for="storage_type">Storage Type:</label>
+            <select name="storage_type" id="storage_type">
+                <option value="1">EBS</option>
+                <option value="2">NVMe SSD</option>
+                <option value="3">HDD</option>
+            </select><br>
+            <label for="storage_amount">Storage Amount: </label>
+            <input required type="number" name="storage_amount" id="storage_amount" placeholder="How much Storage you want" min="128" max="5120" title="min=128, max=5120">GB<br>
+            <label for="network_bandwidth">Network Bandwidth: </label>
+            <input required type="number" name="network_bandwidth" id="network_bandwidth" placeholder="How much bandwidth you want" min="25" max="100" title="min=25, max=100">Gbps<br>
+            <label for="processor">Processor:</label>
+            <select name="processor" id="processor">
+                <option value="1">Custom Intel Xeon E5-2076 V3 haswell</option>
+                <option value="2">AWS Nitro System Xeon</option>
+                <option value="3">Intel Xeon pentium 8176M</option>
+            </select><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

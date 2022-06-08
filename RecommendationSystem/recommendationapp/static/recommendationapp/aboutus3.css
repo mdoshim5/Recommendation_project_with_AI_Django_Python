@@ -1,0 +1,19 @@
+.company-details{
+    align-self: flex-start;
+    padding: 30px;
+    margin-top: 4%;
+    border-radius: 5px;
+    background-color:  #ee6666;
+}
+
+.company-details h2{
+    border-bottom: 2px solid grey;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 15px;
+
+}
+.company-details p{
+    text-align: left;
+    font-size: 18px;
+}

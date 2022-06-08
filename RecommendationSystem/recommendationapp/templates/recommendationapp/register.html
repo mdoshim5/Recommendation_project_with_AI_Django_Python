@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+    Create an account
+{% endblock %}
+
+{% block other_css_link %}
+    <link rel="stylesheet" href="{% static "recommendationapp/register.css" %}?{% now "U" %}">
+{%endblock%}
+
+{% block page_content %}
+<div class="container">
+    <h3>Create Account</h3>
+    <form action="/admin/auth/user/add/" class="form" method="post">
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="First Name"> <br>
+        <input type="text" name="last_name" placeholder="Last Name"> <br>
+        <input type="text" id="id_username" name="username" placeholder="Email or Phone"> <br>
+        <input  type="password" id="id_password1" name="password1" placeholder="Password"> <br>
+        <input  type="password" id="id_password2" name="password2" placeholder="Confirm Password">
+        <button type="submit" value="Save" name="_save">Submit</button>
+        <span>Have one? <a href="/login">Login</a> </span>
+    </form>
+    
+</div>
+{% endblock %}

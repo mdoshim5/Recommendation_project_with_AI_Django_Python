@@ -1,0 +1,11 @@
+.profile_picture img{
+    width: 100%;
+}
+.container{
+    display: grid;
+    grid-template-columns: minmax(500px, 1fr) minmax(300px, 1fr) ;
+    grid-gap: 40px;
+}
+.profile_picture{
+    display: flex;
+}

@@ -1,0 +1,25 @@
+.container{
+    margin: 20px auto;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px grey;
+    padding: 50px;
+    width: 60%;
+    align-self: flex-start;
+    text-align: center;
+}
+.container label{
+    font-size: 22px;
+}
+.container select{
+    padding: 4px;
+    font-size: 18px;
+    margin: 8px;
+}
+.container button{
+    display: block;
+    margin: 5px auto;
+    padding: 8px;
+    font-size: 22px;
+    font-weight: bold;
+}

@@ -1,0 +1,10 @@
+.package-container{
+    margin: 100px auto 0px;
+    width: 35%;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px grey;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}

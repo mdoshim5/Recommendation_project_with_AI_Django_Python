@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %}Profile{% endblock  %}
+
+{% block other_css_link %}
+    <link rel="stylesheet" href="{% static "profileapp/profile.css" %}?{% now "U" %}">
+{% endblock %}
+
+{% block page_content %}
+
+    <div class="container">
+        <div class="profile_picture">
+            <img src="{{profile.profile_picture.url}}" />
+        </div>
+        <div class="profile_details">
+            <h2>User Name: {{user.username}}</h2>
+            <h2>First Name: {{profile.first_name}}</h2>
+            <h2>Last Name: {{profile.last_name}}</h2>
+            <h2>Gender: {{profile.gender}}</h2>
+            <h2>Age: {{profile.age}}</h2> <br>
+            <a class="btn button" href="/profile/edit">Edit</a> 
+        </div>
+    </div>
+
+{% endblock  %}
+

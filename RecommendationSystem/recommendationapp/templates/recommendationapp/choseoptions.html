@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+    Chose your choice of offering data
+{% endblock %}
+
+{% block other_css_link %}
+    <link rel="stylesheet" href="{% static "recommendationapp/choseoptions3.css" %}?{% now "U" %}">
+{%endblock%}
+
+{% block nav_section %}
+    {% include "nav.html"%}
+{% endblock %}
+
+
+{% block page_content %}
+    <div class = "options-div">
+        <a href="know-my-requirements" class = "option-link">I know my requirements</a>
+        <a href="don't-know-my-requirements" class = "option-link">I don't know my requirements</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+
+
+{% if user.is_authenticated %}
+    {% include "loggedinnav.html"%}
+{% else %}
+    <div class="auth">
+        <a href=" {% url 'login' %} ">Login</a>
+        <a href=" {% url 'signup' %} ">Sign Up</a>
+    </div>
+{% endif %}

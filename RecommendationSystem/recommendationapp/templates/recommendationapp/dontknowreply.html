@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+    Recommended Package
+{% endblock %}
+
+{% block other_css_link %}
+    <link rel="stylesheet" href="{% static "recommendationapp/dkr.css" %}?{% now "U" %}">
+{%endblock%}
+
+{% block nav_section %}
+    {% include "nav.html"%}
+{% endblock %}
+
+
+{% block page_content %}
+<div class="package-container">
+    <h2>Package: {{package_details.package}}</h2>
+    <hr>
+    <h4>VCPU : {{package_details.vcpu}}</h4>
+    <h4>RAM : {{package_details.ram}}</h4>
+    <h4>Storage Type : {{package_details.storage_type}}</h4>
+    <h4>Storage Amount : {{package_details.storage_amount}}</h4>
+    <h4>Network Bandwidth : {{package_details.network_bandwidth}} Gbps</h4>
+    <h4>Processor: {{package_details.processor}}</h4>
+</div>
+{% endblock %}

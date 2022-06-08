@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block page_title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon">
+    <link rel="icon" href="{% static "favicon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "base.css" %}?{% now "U" %}">
+    {% block other_css_link %}{% endblock %}
+</head>
+<body>
+    <div class="header-container">
+        <header class="header">
+            <a class="logo" href="/"><img height="80px" width="auto" src="{% static "official_logo.png" %}" alt="official logo"></a>
+           <h1 class="title">Recommendations with power of AI</h1>
+        </header>
+    </div>
+    <nav class= "nav">
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/allpackages">All Packages</a>
+            <a href="/aboutus">About-me</a>
+        </div>
+        {% block nav_section %}
+            {% include "nav.html"%}
+        {% endblock %}        
+    </nav>
+
+    <div class="content">
+        {% block page_content %} Page wise contents goes here {% endblock %}
+    </div>
+
+
+    <footer>
+        <h3 class="center">Copyright &copy; to Md Oshim</h3>
+    </footer>
+
+
+
+
+</body>
+</html>
